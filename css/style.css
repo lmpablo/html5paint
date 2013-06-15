@@ -1,0 +1,257 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    font-family: Segoe UI, Helvetica, sans-serif;
+
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+canvas {
+    position:absolute;
+    left: 0;
+    top: 0;
+    border: 0;
+}
+
+#toolbar{
+    background: #95a5a6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    box-shadow: -0px 2px 4px #222;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    cursor: default;
+    z-index: 999;
+}
+
+.empty{
+    width: 225px;
+    height: 50px;
+    margin: 0;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-left: 20px;
+    margin-right: 10px;
+    float: left;
+    top: 15px;
+
+    font-family: "Roboto Slab", Courier New, serif;
+    font-size: 2em;
+    color: white;
+}
+
+.tool{
+    background-color: #555;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    padding: 0;
+    box-shadow: 1px 1px 2px #222;
+    border-radius: 2px;
+    float: left;
+}
+
+.tool:hover{
+    background: #999 !important;
+}
+
+.tool:active{
+    position: relative;
+    top: 2px;
+    background: #aaa;
+    box-shadow: inset 0 0 5px #222;
+}
+
+.popup-select{
+    position: relative;
+    background: rgba(22, 22, 22, 0.5);
+    display: inline-block;
+    width: 50px;
+    margin-right: 5px;
+    padding: 5px;
+    float: left;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+    font-size: 10pt;
+    line-height: 10pt;
+}
+
+.popup-select:hover{
+    background: rgba(22, 22, 22, 0.2);
+}
+
+.popup-select:active{
+    background: rgba(22, 22, 22, 0.7);
+}
+
+.popup{
+    height: 210px;
+    background: #222;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 4;
+    color: white;
+}
+
+#stroke-width{
+    position: absolute;
+    left:650px;
+    top: 60px;
+    width: 50px;
+}
+
+#stroke-color{
+    position: absolute;
+    top: 60px;
+    left: 715px;
+    width: 250px;
+}
+
+#fill-color{
+    position: absolute;
+    top: 60px;
+    left: 780px;
+    width: 250px;
+}
+
+.red, .blue, .green{
+    float: left;
+    clear: left;
+    width: 200px;
+    margin: 15px;
+}
+
+#outline-choose-slider{
+    position: relative;
+    top: 15px;
+    margin: 0 auto;
+    height: 150px;
+}
+
+#stroke-val{
+    position: relative;
+    top: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+.swatch{
+    position: relative;
+    left: 50px;
+    top: 10px;
+    float: left;
+    clear: left;
+    width: 150px;
+    height: 50px;
+    background: rgba(50, 50, 50, 1);
+    margin: 0 auto;
+}
+
+.red .ui-slider-range { background: #B20000; }
+.green .ui-slider-range { background: #33CC33; }
+.blue .ui-slider-range { background: #0066FF; }
+
+.tool-desc{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 8pt;
+    float: left;
+    text-align: center;
+    visibility: hidden;
+    color: #eee;
+}
+
+.tool:hover > .tool-desc{
+    background: rgba(22, 22, 22, 0.4);
+    visibility: visible;
+}
+
+#pencil > .image {
+    background: url('../img/pencil.png'); 
+    background-repeat:no-repeat;
+    background-size:100% 100%; 
+}
+
+#brush > .image {
+    background: url('../img/brush.png');   
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+#line > .image {
+    background: url('../img/line.png');   
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+#rectangle > .image {
+    background: url('../img/rectangle.png');   
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+#circle > .image {
+    background: url('../img/circle.png');   
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+
+.image{
+    width:50px;
+    height:50px;
+}
+
+.right-float{
+    background-color: #c32;
+    position: fixed;
+    right: 15px;
+    top: 5px;
+    border-radius: 22px;
+
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    text-align: center;    
+    line-height: 8pt;
+    cursor: default;
+}
+
+.right-float:hover{
+    background-color: #f20;
+    box-shadow: 0 0 10px #f20;
+
+}
+
+.right-float:active{
+    position: absolute;
+    top: 7px;
+    box-shadow: none;
+    background-color: #f10;
+    transition: all 100ms ease-in-out;
+}
+
+.right-float > span{
+    color: white;
+    text-align: center;
+    font-size: 8pt;
+    position: relative;
+    top: 10px;
+}

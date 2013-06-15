@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>HTML5 Paint</title>
+        <meta name="description" content="A paint program made with HTML5, JS, and CSS">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        
+        <canvas id = "baseCanvas" width = 500 height = 500 >Your browser does not support the HTML5 canvas tag.</canvas>
+        <canvas id = "canvas" width = 500 height = 500 >Your browser does not support the HTML5 canvas tag.</canvas>
+        <div id = "toolbar" style = "z-index: 5;">
+            <div id = "banner" class = "empty">HTML5 PAINT</div>
+            <div id = "pencil" class = "tool" data-tid = "1">
+                <div class = "image"></div>
+                <div class = "tool-desc">Pencil</div></div>
+            <div id = "brush" class = "tool" data-tid = "2">
+                <div class = "image"></div>
+                <div class = "tool-desc">Brush</div></div>
+            <div id = "line" class = "tool" data-tid = "3">
+                <div class = "image"></div>
+                <div class = "tool-desc">Line</div></div>
+            <div id = "rectangle" class = "tool" data-tid = "4">
+                <div class = "image"></div>
+                <div class = "tool-desc">Rectangle</div></div>
+            <div id = "circle" class = "tool" data-tid = "5">
+                <div class = "image"></div>
+                <div class = "tool-desc">Circle</div></div>
+            <div id = "round-rect" class = "tool" data-tid="6">
+                <div class = "image"></div>
+                <div class = "tool-desc">Rounded Rectangle</div></div>
+            <div id = "eraser" class = "tool" data-tid="10">
+                <div class = "image"></div>
+                <div class = "tool-desc">Eraser</div></div>
+            <div id = "outline-choose" class = "popup-select">Stroke Width <span class = "ui-icon ui-icon-triangle-1-s" style = "margin: 0 auto;"></span></div>
+            <div id = "outline-color-choose" class = "popup-select">Stroke Color<span class = "ui-icon ui-icon-triangle-1-s" style = "margin: 0 auto;"></span></div>
+            <div id = "fill-color-choose" class = "popup-select">Fill Color<span class = "ui-icon ui-icon-triangle-1-s" style = "margin: 0 auto;"></span></div>
+        </div>
+
+        <div id = "stroke-width" class = "popup"><div id = "outline-choose-slider"></div><div id = "stroke-val">1</div></div>
+        <div id = "stroke-color" class = "popup">
+            <div id = "stroke-red" class = "red"></div>
+            <div id = "stroke-green" class = "green"></div>
+            <div id = "stroke-blue" class = "blue"></div>
+            <div id = "stroke-swatch" class = "swatch"></div>
+        </div>
+        <div id = "fill-color" class = "popup">
+            <div id = "fill-red" class = "red"></div>
+            <div id = "fill-green" class = "green"></div>
+            <div id = "fill-blue" class = "blue"></div>
+            <div id = "fill-swatch" class = "swatch"></div>
+        </div>
+
+        <div id ="clear" class = "right-float"><span>Clear Canvas</span></div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-41317497-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
